@@ -1,0 +1,261 @@
+.api-url-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.alert-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+}
+
+.alert-content {
+  display: flex;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.alert-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.alert-body {
+  flex: 1;
+}
+
+.alert-title {
+  margin: 0 0 1rem 0;
+  color: #dc3545;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.alert-text {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
+.alert-steps {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  color: #2c3e50;
+}
+
+.alert-steps li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.alert-steps a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.alert-steps a:hover {
+  background-color: #e3f2fd;
+  text-decoration: underline;
+}
+
+.alert-steps .alert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.alert-steps code,
+.code-highlight {
+  background-color: #f1f3f4;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #d63384;
+  border: 1px solid #e9ecef;
+  font-weight: 500;
+}
+
+.code-inline {
+  background-color: #f8f9fa;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9rem;
+  color: #495057;
+  border: 1px solid #dee2e6;
+}
+
+.alert-example {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.example-title {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.code-block {
+  background-color: #2d3748;
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  border: 1px solid #4a5568;
+}
+
+.code-block code {
+  background: none;
+  padding: 0;
+  color: #e2e8f0;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+  word-break: break-all;
+  line-height: 1.4;
+  border: none;
+}
+
+.highlight-url {
+  background-color: #ffd700;
+  color: #2d3748;
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.alert-note {
+  background-color: #e3f2fd;
+  border: 1px solid #bbdefb;
+  border-radius: 6px;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.note-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.note-text {
+  font-size: 0.9rem;
+  color: #1565c0;
+  line-height: 1.4;
+}
+
+.alert-dismiss {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert-dismiss:hover {
+  background-color: #f8f9fa;
+  color: #dc3545;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .api-url-alert {
+    padding: 0.5rem;
+  }
+  
+  .alert-content {
+    padding: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .alert-icon {
+    align-self: center;
+  }
+  
+  .alert-title {
+    font-size: 1.1rem;
+  }
+  
+  .alert-steps {
+    text-align: left;
+    padding-left: 1rem;
+  }
+  
+  .alert-example code {
+    word-break: break-all;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .alert-content {
+    padding: 1rem;
+  }
+  
+  .alert-title {
+    font-size: 1rem;
+  }
+  
+  .alert-text,
+  .alert-steps {
+    font-size: 0.9rem;
+  }
+  
+  .alert-dismiss {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+  }
+}
